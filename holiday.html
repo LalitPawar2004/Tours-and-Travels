@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Packages</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #1565c0;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .tab {
+            padding: 10px 25px;
+            margin: 0 10px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .tab.active {
+            background-color: #0d47a1;
+            font-weight: bold;
+        }
+        
+        .tab:hover {
+            background-color: #1976d2;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+        
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .package-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .package-info {
+            padding: 20px;
+        }
+        
+        .package-name {
+            font-size: 1.3em;
+            margin: 0 0 10px;
+            color: #1e88e5;
+        }
+        
+        .package-duration {
+            color: #666;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-duration:before {
+            content: "⏱️";
+            margin-right: 8px;
+        }
+        
+        .package-price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #e53935;
+            margin: 15px 0;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-details {
+            background-color: #1e88e5;
+            color: white;
+            flex: 1;
+            margin-right: 10px;
+        }
+        
+        .btn-enquiry {
+            background-color: #43a047;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-details:hover {
+            background-color: #1565c0;
+        }
+        
+        .btn-enquiry:hover {
+            background-color: #2e7d32;
+        }
+        
+        footer {
+            background-color: #1e88e5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="category-tabs">
+        <a href="index.html" > <button class="tab">Home</button> </a> 
+        <a href="#domestic-packages" > <button class="tab">Domestic</button> </a> 
+        <a href="#international-packages" > <button class="tab">International</button> </a> 
+        <a href="#theme-packages" > <button class="tab">Theme-based</button> </a> 
+    </div>
+    
+    <div class="container">
+        <section id="domestic-packages">
+            <h2>Domestic Packages</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Beach Vacation" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Sunny Beach Escape</h3>
+                        <p class="package-duration">5 Days / 4 Nights</p>
+                        <p class="package-price">$499 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mountain Retreat" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Mountain Adventure</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-price">$799 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="City Tour" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Metropolitan Explorer</h3>
+                        <p class="package-duration">4 Days / 3 Nights</p>
+                        <p class="package-price">$399 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Beach Vacation" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Sunny Beach Escape</h3>
+                        <p class="package-duration">5 Days / 4 Nights</p>
+                        <p class="package-price">$499 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mountain Retreat" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Mountain Adventure</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-price">$799 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="City Tour" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Metropolitan Explorer</h3>
+                        <p class="package-duration">4 Days / 3 Nights</p>
+                        <p class="package-price">$399 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Beach Vacation" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Sunny Beach Escape</h3>
+                        <p class="package-duration">5 Days / 4 Nights</p>
+                        <p class="package-price">$499 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mountain Retreat" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Mountain Adventure</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-price">$799 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="City Tour" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Metropolitan Explorer</h3>
+                        <p class="package-duration">4 Days / 3 Nights</p>
+                        <p class="package-price">$399 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="international-packages">
+            <h2>International Packages</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="European Tour" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">European Highlights</h3>
+                        <p class="package-duration">10 Days / 9 Nights</p>
+                        <p class="package-price">$2,499 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Asian Adventure" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Asian Discovery</h3>
+                        <p class="package-duration">14 Days / 13 Nights</p>
+                        <p class="package-price">$3,199 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Caribbean Cruise" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Caribbean Paradise</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-price">$1,899 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="European Tour" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">European Highlights</h3>
+                        <p class="package-duration">10 Days / 9 Nights</p>
+                        <p class="package-price">$2,499 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Asian Adventure" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Asian Discovery</h3>
+                        <p class="package-duration">14 Days / 13 Nights</p>
+                        <p class="package-price">$3,199 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Caribbean Cruise" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Caribbean Paradise</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-price">$1,899 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="European Tour" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">European Highlights</h3>
+                        <p class="package-duration">10 Days / 9 Nights</p>
+                        <p class="package-price">$2,499 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Asian Adventure" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Asian Discovery</h3>
+                        <p class="package-duration">14 Days / 13 Nights</p>
+                        <p class="package-price">$3,199 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Caribbean Cruise" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Caribbean Paradise</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-price">$1,899 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="theme-packages">
+            <h2>Theme-based Packages</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Honeymoon Package" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Romantic Honeymoon</h3>
+                        <p class="package-duration">8 Days / 7 Nights</p>
+                        <p class="package-price">$1,599 per couple</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Family Vacation" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Family Fun Package</h3>
+                        <p class="package-duration">6 Days / 5 Nights</p>
+                        <p class="package-price">$1,299 (2 adults + 2 kids)</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Adventure Trip" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Adventure Seeker</h3>
+                        <p class="package-duration">9 Days / 8 Nights</p>
+                        <p class="package-price">$1,799 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Honeymoon Package" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Romantic Honeymoon</h3>
+                        <p class="package-duration">8 Days / 7 Nights</p>
+                        <p class="package-price">$1,599 per couple</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Family Vacation" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Family Fun Package</h3>
+                        <p class="package-duration">6 Days / 5 Nights</p>
+                        <p class="package-price">$1,299 (2 adults + 2 kids)</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Adventure Trip" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Adventure Seeker</h3>
+                        <p class="package-duration">9 Days / 8 Nights</p>
+                        <p class="package-price">$1,799 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Honeymoon Package" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Romantic Honeymoon</h3>
+                        <p class="package-duration">8 Days / 7 Nights</p>
+                        <p class="package-price">$1,599 per couple</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Family Vacation" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Family Fun Package</h3>
+                        <p class="package-duration">6 Days / 5 Nights</p>
+                        <p class="package-price">$1,299 (2 adults + 2 kids)</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Adventure Trip" class="package-image">
+                    <div class="package-info">
+                        <h3 class="package-name">Adventure Seeker</h3>
+                        <p class="package-duration">9 Days / 8 Nights</p>
+                        <p class="package-price">$1,799 per person</p>
+                        <div class="button-group">
+                            <button class="btn btn-details">View Details</button>
+                            <button class="btn btn-enquiry">Send Enquiry</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 ExploreWorld. All Rights Reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

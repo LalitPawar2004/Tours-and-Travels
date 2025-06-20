@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Om Tours</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <!-- Simple Navbar -->
+  <nav class="simple-navbar">
+  <div class="container">
+    <h1 class="logo">Om Tours</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2>Travel Gallery</h2>
+      <p class="subheading">Explore our moments captured across different destinations.</p>
+
+      <!-- Albums by Destination -->
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=" alt="India Tour" />
+          <p>India Tour</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=612x612&w=0&k=20&c=ZneUFVlR5TPCooxRV1rldUAadqLxZEvOoyVCOrtpcRQ=" alt="Paris" />
+          <p>Paris</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/904172104/photo/weve-made-it-all-this-way-i-am-proud.jpg?s=612x612&w=0&k=20&c=MewnsAhbeGRcMBN9_ZKhThmqPK6c8nCT8XYk5ZM_hdg=" alt="Mountain View" />
+          <p>Mountain Adventures</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1849172463/photo/happy-family-having-fun-running-on-a-sandy-beach-at-sunset-time.jpg?s=612x612&w=0&k=20&c=CEf1PWHFTsWarBP8zhwMKe9pErLeMuZdl-oVoCOExbA=" alt="Beach" />
+          <p>Beach Holidays</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1469688145/photo/traveler-exploring-ancient-ruins-of-ta-prohm-temple-at-angkor.jpg?s=612x612&w=0&k=20&c=2iA106pWyj2o-432DXeISetH_yeNQ9NIit43E_fZo-4=" alt="Cultural Tour" />
+          <p>Cultural Trips</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.istockphoto.com/id/1360012506/photo/camel-caravan-going-through-the-sahara-desert-in-morocco-at-sunset.jpg?s=612x612&w=0&k=20&c=WJAcxHx4yNhy9sSOt7zQ7oErGnsJ0OnRBl_Xs74pvJc=" alt="Desert Safari" />
+          <p>Desert Safari</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img src="" alt="Enlarged Photo" class="lightbox-img">
+  </div>
+
+  <!-- Footer -->
+  <footer class="simple-footer">
+    <p>&copy; 2023 ExploreWorld. All Rights Reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      $(".gallery-item img").click(function () {
+        let src = $(this).attr("src");
+        $(".lightbox-img").attr("src", src);
+        $(".lightbox").fadeIn();
+      });
+
+      $(".close-lightbox").click(function () {
+        $(".lightbox").fadeOut();
+      });
+
+      $(".lightbox").click(function (e) {
+        if (e.target !== $(".lightbox-img")[0]) {
+          $(".lightbox").fadeOut();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corporate Travel & MICE Services</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      .category-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #003366;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .tab {
+            padding: 10px 25px;
+            margin: 0 10px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+      }
+      section {
+        padding: 30px 0;
+        border-bottom: 1px solid #eaeaea;
+      }
+      h1,
+      h2 {
+        color: #003366;
+      }
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      .service-box {
+        background: #f9f9f9;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      .cta-button {
+        display: inline-block;
+        background: #003366;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .cta-button:hover {
+        background: #004080;
+      }
+      footer {
+        background: #003366;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
+      }
+
+              @media (max-width: 768px) {
+            
+            .category-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="category-tabs">
+      <a href="index.html"> <button class="tab">Home</button> </a>
+      <a href="#corporate-travel"> <button class="tab">Services</button> </a>
+      <a href="#mice-services"><button class="tab">Conferences</button></a>
+      <a href="#contact-mice"> <button class="tab">Contact</button> </a>
+    </div>
+
+    <section id="corporate-travel">
+      <div class="container">
+        <h2>Corporate Travel Services</h2>
+        <div class="service-box">
+          <h3>Tailored Business Travel Solutions</h3>
+          <p>
+            We provide comprehensive corporate travel management services
+            designed to meet your company's specific needs. Our services
+            include:
+          </p>
+          <ul>
+            <li>Flight bookings and preferred airline partnerships</li>
+            <li>Hotel accommodations with corporate rates</li>
+            <li>Ground transportation arrangements</li>
+            <li>24/7 travel support and emergency assistance</li>
+            <li>Detailed travel reporting and analytics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="mice-services">
+      <div class="container">
+        <h2>Conferences, Incentives, Meetings & Exhibitions</h2>
+        <div class="service-box">
+          <h3>Meetings & Conferences</h3>
+          <p>
+            From small board meetings to large conferences, we handle all
+            logistics including venue selection, accommodation, catering, and
+            audio-visual requirements.
+          </p>
+        </div>
+
+        <div class="service-box">
+          <h3>Incentive Travel</h3>
+          <p>
+            Motivate your team with unforgettable incentive trips tailored to
+            your objectives and budget, including unique experiences and
+            team-building activities.
+          </p>
+        </div>
+
+        <div class="service-box">
+          <h3>Exhibitions & Events</h3>
+          <p>
+            Complete exhibition management services including booth design,
+            logistics, staffing, and promotional activities to maximize your
+            event ROI.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-mice">
+      <div class="container">
+        <h2>Contact Our MICE Specialists</h2>
+        <p>
+          Ready to plan your next corporate event or business travel program?
+          Our dedicated MICE team is here to help.
+        </p>
+        <a href="mailto:mice@yourcompany.com" class="cta-button"
+          >Contact MICE Team</a
+        >
+        <p>Or call us at: +1 (555) 123-4567</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 ExploreWorld. All Rights Reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

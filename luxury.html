@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Holidays</title>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            margin-top: 15px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            color: #8b6b4a;
+            font-size: 1.8em;
+            font-weight: 300;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-title {
+            font-size: 1.3em;
+            margin: 0 0 10px;
+            color: #333;
+        }
+        
+        .card-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .card-highlight {
+            color: #8b6b4a;
+            font-weight: 500;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-highlight:before {
+            content: "★";
+            margin-right: 8px;
+            color: #d4af37;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #8b6b4a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #6b5338;
+        }
+        
+        .travel-styles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .style-card {
+            width: 160px;
+            text-align: center;
+            padding: 25px 15px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        
+        .style-icon {
+            font-size: 2.5em;
+            color: #8b6b4a;
+            margin-bottom: 15px;
+        }
+        
+        .style-name {
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        footer {
+            background-color: #8b6b4a;
+            color: #ccc;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .travel-styles {
+                gap: 15px;
+            }
+            
+            .style-card {
+                width: 120px;
+                padding: 20px 10px;
+            }
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #8b6b4a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .tab {
+            padding: 10px 25px;
+            margin: 0 10px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .category-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <navbar>
+        <div class="category-tabs">
+        <a href="index.html" > <button class="tab">Home</button> </a> 
+        <a href="#luxury-destinations" > <button class="tab">Luxury destination</button> </a> 
+        <a href="#luxury-tours" > <button class="tab">Handpicked Tour</button> </a> 
+        <a href="#travel-styles" > <button class="tab">Travel Style</button> </a> 
+    </div>
+    </navbar>
+    <div class="container">
+        <section id="luxury-destinations">
+            <h2>Luxury Destinations</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maldives" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Maldives Private Islands</h3>
+                        <p class="card-description">Experience ultimate privacy in your own overwater villa with personal butler service and untouched coral reefs.</p>
+                        <p class="card-highlight">Private beach access & personal chef included</p>
+                        <a href="#" class="btn">Explore Villas</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paris" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Parisian Elegance</h3>
+                        <p class="card-description">Stay at the most prestigious addresses in Paris with private tours of closed museums and Michelin-star dining.</p>
+                        <p class="card-highlight">VIP access to cultural landmarks</p>
+                        <a href="#" class="btn">Discover Paris</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Safari" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">African Safari Retreat</h3>
+                        <p class="card-description">Luxury tented camps with private game drives, spa treatments under the stars, and champagne bush dinners.</p>
+                        <p class="card-highlight">Private wildlife guides & photographers</p>
+                        <a href="#" class="btn">Plan Safari</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Safari" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">African Safari Retreat</h3>
+                        <p class="card-description">Luxury tented camps with private game drives, spa treatments under the stars, and champagne bush dinners.</p>
+                        <p class="card-highlight">Private wildlife guides & photographers</p>
+                        <a href="#" class="btn">Plan Safari</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="luxury-tours">
+            <h2>Handpicked Luxury Tours</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Italian Tour" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Grand Italian Journey</h3>
+                        <p class="card-description">14-day private tour of Italy's hidden gems with stays in historic villas, private vineyard tours, and cooking with Michelin chefs.</p>
+                        <p class="card-highlight">From €15,000 per person</p>
+                        <a href="#" class="btn">Tour Details</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Yacht Charter" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Mediterranean Yacht Charter</h3>
+                        <p class="card-description">7-day private yacht charter with crew, visiting secluded coves and coastal villages along the French and Italian Rivieras.</p>
+                        <p class="card-highlight">From €25,000 per week</p>
+                        <a href="#" class="btn">Charter Options</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Japanese Tour" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Exclusive Japan Experience</h3>
+                        <p class="card-description">10-day cultural immersion with private tea ceremonies, sumo training access, and stays in authentic ryokan with private onsens.</p>
+                        <p class="card-highlight">From ¥1,200,000 per person</p>
+                        <a href="#" class="btn">Explore Japan</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Japanese Tour" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Exclusive Japan Experience</h3>
+                        <p class="card-description">10-day cultural immersion with private tea ceremonies, sumo training access, and stays in authentic ryokan with private onsens.</p>
+                        <p class="card-highlight">From ¥1,200,000 per person</p>
+                        <a href="#" class="btn">Explore Japan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="travel-styles">
+            <h2>Travel Styles</h2>
+            <div class="travel-styles">
+                <div class="style-card">
+                    <div class="style-icon">🏖️</div>
+                    <div class="style-name">Beach Retreats</div>
+                </div>
+                
+                <div class="style-card">
+                    <div class="style-icon">🏛️</div>
+                    <div class="style-name">Cultural Immersion</div>
+                </div>
+                
+                <div class="style-card">
+                    <div class="style-icon">⛰️</div>
+                    <div class="style-name">Adventure</div>
+                </div>
+                
+                <div class="style-card">
+                    <div class="style-icon">🍷</div>
+                    <div class="style-name">Gourmet</div>
+                </div>
+                
+                <div class="style-card">
+                    <div class="style-icon">🚢</div>
+                    <div class="style-name">Cruises</div>
+                </div>
+                
+                <div class="style-card">
+                    <div class="style-icon">🏨</div>
+                    <div class="style-name">Luxury Hotels</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 ExploreWorld. All Rights Reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

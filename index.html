@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tours and Travels</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 15px 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .nav-links li a:hover {
+        color: #007bff;
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          text-align: center;
+          padding: 10px 0;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">MyLogo</div>
+      <div id="menuToggle" class="menu-toggle">&#9776;</div>
+      <ul id="navLinks" class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="client.html">Testimonials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        // Toggle icon (optional)
+        if (navLinks.classList.contains("active")) {
+          menuToggle.innerHTML = "&times;";
+        } else {
+          menuToggle.innerHTML = "&#9776;";
+        }
+      });
+
+      // Reset menu on resize back to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          navLinks.classList.remove("active");
+          menuToggle.innerHTML = "&#9776;";
+        }
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Explore the World with Us</h1>
+        <p>Discover amazing places at exclusive deals</p>
+      </div>
+    </section>
+
+    <!-- Popular Packages Section -->
+    <section class="popular-packages">
+      <div class="section-title">
+        <h2>Popular Tour Packages</h2>
+        <p>Explore our most loved travel experiences</p>
+      </div>
+
+      <div class="packages-container">
+        <div class="package-card">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1661919210043-fd847a58522d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Paris Tour"
+          />
+          <h3>Paris Getaway</h3>
+          <p>5 Days | Starting at ₹75,000</p>
+          <div class="button-group">
+            <a href="#"> <button class="btn btn-details">View Details</button> </a>
+            <a href="enquiry.html"> <button class="btn btn-enquiry">Send Enquiry</button> </a> 
+          </div>
+        </div>
+        <div class="package-card">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+            alt="Bali Tour"
+          />
+          <h3>Bali Escape</h3>
+          <p>7 Days | Starting at ₹65,000</p>
+          <div class="button-group">
+            <a href="#"> <button class="btn btn-details">View Details</button> </a>
+            <a href="enquiry.html"> <button class="btn btn-enquiry">Send Enquiry</button> </a> 
+          </div>
+        </div>
+        <div class="package-card">
+          <img
+            src="https://media.istockphoto.com/id/1486108628/photo/house-of-parliament-under-a-dramatic-sunset.jpg?s=612x612&w=0&k=20&c=txRJKZag6guQG78ZGtq6Xgv9LkBKG-RsajYfVc1RdnY="
+            alt="Agra Tour"
+          />
+          <h3>London</h3>
+          <p>3 Days | Starting at ₹18,000</p>
+          <div class="button-group">
+            <a href="#"> <button class="btn btn-details">View Details</button> </a>
+            <a href="enquiry.html"> <button class="btn btn-enquiry">Send Enquiry</button> </a> 
+          </div>
+        </div>
+        <div class="package-card">
+          <img
+            src="https://media.istockphoto.com/id/1486108628/photo/house-of-parliament-under-a-dramatic-sunset.jpg?s=612x612&w=0&k=20&c=txRJKZag6guQG78ZGtq6Xgv9LkBKG-RsajYfVc1RdnY="
+            alt="Agra Tour"
+          />
+          <h3>London</h3>
+          <p>3 Days | Starting at ₹18,000</p>
+          <div class="button-group">
+            <a href="#"> <button class="btn btn-details">View Details</button> </a>
+            <a href="enquiry.html"> <button class="btn btn-enquiry">Send Enquiry</button> </a> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Categories Section -->
+    <section class="travel-categories">
+      <div class="section-title">
+        <h2>Travel Categories</h2>
+        <p>Choose your type of adventure</p>
+      </div>
+
+      <div class="categories-container">
+        <a href="holiday.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1497396873/photo/ready-for-starting-my-beach-holiday.jpg?s=612x612&w=0&k=20&c=Rfb7IbYAZR1hNTF6KUDYq8CVu9Yr4wRgK2VLZIZyORY="
+              alt="Cruises"
+            />
+            <h4>Holiday</h4>
+          </div>
+        </a>
+        <a href="luxury.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/2158022704/photo/vacation-in-paradise.jpg?s=612x612&w=0&k=20&c=GqTwqC7owjAoDiZkmSgQZBCFEFDfaFiOlu4pH3Y1FYc="
+              alt="Cruises"
+            />
+            <h4>Luxury Hoidays</h4>
+          </div>
+        </a>
+        <a href="cruise.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/155375632/photo/tropical-paradise.jpg?s=612x612&w=0&k=20&c=pkKzP9C7hmjiplWWz_8fZf2NlwXIi9sn9GKY85QiQV8="
+              alt="Cruises"
+            />
+            <h4>Cruises</h4>
+          </div>
+        </a>
+        <a href="wildlife.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1416834065/photo/african-elephant-walking-with-tourist-car-stop-by-watching-during-sunset-at-masai-mara.jpg?s=612x612&w=0&k=20&c=OoRz5qTlXU4UTqhrXQ-c4bTO-avWBG-QE30iSOE_1Hg="
+              alt="Cruises"
+            />
+            <h4>Wildlife</h4>
+          </div>
+        </a>
+        <a href="indian.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1031430214/photo/young-woman-kayaking-through-the-backwaters-of-monroe-island.jpg?s=612x612&w=0&k=20&c=kbv2s1kknMzJgk8Nd-W2VNIf0AFx48YtCqygtI3Ppos="
+              alt="Cruises"
+            />
+            <h4>Indian</h4>
+          </div>
+        </a>
+        <a
+          href="international.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1131877134/photo/travel-illustration-worlds-famous-landmarks-and-tourist-destinations-elements-in-colorful.jpg?s=612x612&w=0&k=20&c=5re_53AkB99-KSBR9a-8g2BvyHHRx_LAY04LHpMzQ10="
+              alt="Cruises"
+            />
+            <h4>international</h4>
+          </div>
+        </a>
+        <a href="weekend.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1344954298/photo/family-with-dog-in-the-car.jpg?s=612x612&w=0&k=20&c=anIzsubkI7wzUiSHC_gUIVyJuSX2KXJ1-Lu5c25CCzA="
+              alt="Cruises"
+            />
+            <h4>Weekend Gateways</h4>
+          </div>
+        </a>
+        <a href="honeymoon.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1256296335/photo/a-romantic-couple-on-summer-vacation-enjos-the-sunset-over-the-mediterranean-sea-by-the-pool.jpg?s=612x612&w=0&k=20&c=FJurmc0CUMEpoAdRIUfJ2rHIOM-gYs-V5MM_0PoOJtQ="
+              alt="Cruises"
+            />
+            <h4>Honeymoon</h4>
+          </div>
+        </a>
+        <a href="corporate.html" style="text-decoration: none; color: inherit">
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/1489123986/photo/travel-for-business-team-at-airport-and-men-catch-flight-for-work-trip-with-conference-or.jpg?s=612x612&w=0&k=20&c=TtfyyN-mkRKAHiOcmNV5IHOWSuL2THEmPgCWXlj7EBM="
+              alt="Cruises"
+            />
+            <h4>MICE/Coorporate</h4>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section class="testimonials">
+      <div class="section-title">
+        <h2>What Our Clients Say</h2>
+        <p>Real experiences from happy travelers</p>
+      </div>
+
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p>
+            "The tour was well organized and the team was very helpful. We had
+            an amazing time in Bali!"
+          </p>
+          <h4>- Priya Sharma</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>
+            "A wonderful trip to Paris! Everything from flights to hotels was
+            smooth. Highly recommended!"
+          </p>
+          <h4>- Raj Malhotra</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>
+            "Very professional and responsive service. Our honeymoon in Maldives
+            was unforgettable!"
+          </p>
+          <h4>- Anjali & Karan</h4>
+        </div>
+      </div>
+
+      <div class="testimonial-more">
+        <a href="client.html" class="view-more-btn">View More Testimonials</a>
+      </div>
+    </section>
+
+    <!-- Travel Inspirations Section -->
+    <section class="travel-blogs">
+      <div class="section-title">
+        <h2>Travel Inspirations</h2>
+        <p>Get inspired by our latest travel stories & specials</p>
+      </div>
+
+      <div class="blogs-container">
+        <div class="blog-card">
+          <img
+            src="https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=800&q=80"
+            alt="Blog 1"
+          />
+          <h3>Top 10 Beaches to Visit in Asia</h3>
+          <p>
+            From white sands to turquoise waters, explore must-visit tropical
+            beaches.
+          </p>
+        </div>
+        <div class="blog-card">
+          <img
+            src="https://media.istockphoto.com/id/1256296335/photo/a-romantic-couple-on-summer-vacation-enjos-the-sunset-over-the-mediterranean-sea-by-the-pool.jpg?s=612x612&w=0&k=20&c=FJurmc0CUMEpoAdRIUfJ2rHIOM-gYs-V5MM_0PoOJtQ="
+            alt="Blog 2"
+          />
+          <h3>Romantic Honeymoon Destinations</h3>
+          <p>Plan the perfect romantic escape with our top honeymoon picks.</p>
+        </div>
+        <div class="blog-card">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+            alt="Blog 3"
+          />
+          <h3>Best Road Trips in India</h3>
+          <p>
+            Discover scenic highways, hidden gems, and epic adventures on the
+            road.
+          </p>
+        </div>
+      </div>
+
+      <div class="testimonial-more">
+        <a href="blogs.html" class="view-more-btn">View More Blogs</a>
+      </div>
+    </section>
+
+    <!-- Enquiry / Quick Contact Section -->
+    <section class="contact-section">
+      <div class="contact-content">
+        <h2>Have a Question or Need Help?</h2>
+        <p>Click below to get in touch with our travel experts!</p>
+        <a href="enquiry.html" class="contact-btn">Quick Enquiry</a>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2023 ExploreWorld. All Rights Reserved. |
+          <a href="terms.html" style="color: white">Terms & Conditions</a> |
+          <a href="privacy.html" style="color: white">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Link JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

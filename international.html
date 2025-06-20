@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Holidays</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), url('https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            margin: 40px 0 30px;
+        }
+        
+        .continent-section {
+            margin-bottom: 50px;
+        }
+        
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .country-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .country-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        
+        .country-info {
+            padding: 20px;
+        }
+        
+        .country-name {
+            font-size: 1.3em;
+            margin: 0 0 10px;
+            color: #2c3e50;
+        }
+        
+        .tour-count {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        
+        .tour-list {
+            margin: 15px 0;
+        }
+        
+        .tour-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .tour-title {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+        
+        .tour-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .view-itinerary {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .view-itinerary:hover {
+            background: #2980b9;
+        }
+        
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .quick-link {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        
+        .quick-link:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: #2980b9;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+    <style>
+      .category-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #2980b9;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .tab {
+            padding: 10px 25px;
+            margin: 0 10px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+       @media (max-width: 768px) {
+            .category-tabs {
+                flex-wrap: wrap;
+            } 
+            
+            .tab {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="category-tabs">
+      <a href="index.html"> <button class="tab">Home</button> </a>
+      <a href="#europe"> <button class="tab">Europe Tours</button> </a>
+      <a href="#asia"> <button class="tab">Asia Tours</button> </a>
+      <a href="#americas"> <button class="tab">Americas</button> </a>
+      <a href="#africa"> <button class="tab">Africa</button> </a>
+      <a href="#oceania"> <button class="tab">Oceania</button> </a>
+    </div>
+
+    <div class="container">
+        <section id="europe" class="continent-section">
+            <h2>Europe Tours</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="France">
+                    <div class="country-info">
+                        <h3 class="country-name">France</h3>
+                        <p class="tour-count">5 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Paris & Normandy</div>
+                                <div class="tour-details">
+                                    <span>7 Days</span>
+                                    <span>From €1,299</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Provence Explorer</div>
+                                <div class="tour-details">
+                                    <span>5 Days</span>
+                                    <span>From €899</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Italy">
+                    <div class="country-info">
+                        <h3 class="country-name">Italy</h3>
+                        <p class="tour-count">6 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Classic Italy</div>
+                                <div class="tour-details">
+                                    <span>10 Days</span>
+                                    <span>From €1,599</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Amalfi Coast</div>
+                                <div class="tour-details">
+                                    <span>7 Days</span>
+                                    <span>From €1,299</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Spain">
+                    <div class="country-info">
+                        <h3 class="country-name">Spain</h3>
+                        <p class="tour-count">4 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Spanish Highlights</div>
+                                <div class="tour-details">
+                                    <span>8 Days</span>
+                                    <span>From €1,199</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Barcelona & Costa Brava</div>
+                                <div class="tour-details">
+                                    <span>6 Days</span>
+                                    <span>From €999</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="asia" class="continent-section">
+            <h2>Asia Tours</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Japan">
+                    <div class="country-info">
+                        <h3 class="country-name">Japan</h3>
+                        <p class="tour-count">5 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Classic Japan</div>
+                                <div class="tour-details">
+                                    <span>12 Days</span>
+                                    <span>From ¥250,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Cherry Blossom Tour</div>
+                                <div class="tour-details">
+                                    <span>8 Days</span>
+                                    <span>From ¥180,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Thailand">
+                    <div class="country-info">
+                        <h3 class="country-name">Thailand</h3>
+                        <p class="tour-count">4 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Thai Beaches & Temples</div>
+                                <div class="tour-details">
+                                    <span>10 Days</span>
+                                    <span>From ฿35,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Bangkok & Chiang Mai</div>
+                                <div class="tour-details">
+                                    <span>7 Days</span>
+                                    <span>From ฿25,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Vietnam">
+                    <div class="country-info">
+                        <h3 class="country-name">Vietnam</h3>
+                        <p class="tour-count">3 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Vietnam Highlights</div>
+                                <div class="tour-details">
+                                    <span>12 Days</span>
+                                    <span>From ₫25,000,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Halong Bay Cruise</div>
+                                <div class="tour-details">
+                                    <span>5 Days</span>
+                                    <span>From ₫12,000,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="americas" class="continent-section">
+            <h2>Americas</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="USA">
+                    <div class="country-info">
+                        <h3 class="country-name">United States</h3>
+                        <p class="tour-count">6 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Coastal California</div>
+                                <div class="tour-details">
+                                    <span>10 Days</span>
+                                    <span>From $2,499</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">New York & Washington DC</div>
+                                <div class="tour-details">
+                                    <span>7 Days</span>
+                                    <span>From $1,799</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Canada">
+                    <div class="country-info">
+                        <h3 class="country-name">Canada</h3>
+                        <p class="tour-count">4 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Rocky Mountaineer</div>
+                                <div class="tour-details">
+                                    <span>9 Days</span>
+                                    <span>From CA$3,199</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                            <div class="tour-item">
+                                <div class="tour-title">Eastern Cities</div>
+                                <div class="tour-details">
+                                    <span>7 Days</span>
+                                    <span>From CA$2,199</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="africa" class="continent-section">
+            <h2>Africa</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="South Africa">
+                    <div class="country-info">
+                        <h3 class="country-name">South Africa</h3>
+                        <p class="tour-count">3 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">Cape Town & Safari</div>
+                                <div class="tour-details">
+                                    <span>10 Days</span>
+                                    <span>From R25,000</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="oceania" class="continent-section">
+            <h2>Oceania</h2>
+            <div class="countries-grid">
+                <div class="country-card">
+                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Australia">
+                    <div class="country-info">
+                        <h3 class="country-name">Australia</h3>
+                        <p class="tour-count">5 tours available</p>
+                        <div class="tour-list">
+                            <div class="tour-item">
+                                <div class="tour-title">East Coast Explorer</div>
+                                <div class="tour-details">
+                                    <span>14 Days</span>
+                                    <span>From AU$3,499</span>
+                                </div>
+                                <a href="#" class="view-itinerary">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 ExploreWorld. All Rights Reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

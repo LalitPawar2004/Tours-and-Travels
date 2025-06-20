@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honeymoon Packages</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+        background-color: #fff9fb;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.8em;
+      }
+
+      .tagline {
+        font-size: 1.2em;
+        margin-top: 15px;
+      }
+
+      .container {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+      }
+
+      h2 {
+        color: #e84393;
+        border-bottom: 2px solid #e84393;
+        padding-bottom: 10px;
+        margin: 40px 0 30px;
+      }
+
+      .destinations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .destination-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .destination-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .destination-info {
+        padding: 25px;
+      }
+
+      .destination-title {
+        font-size: 1.4em;
+        margin: 0 0 10px;
+        color: #2d3436;
+      }
+
+      .destination-highlights {
+        color: #636e72;
+        margin-bottom: 15px;
+        min-height: 60px;
+      }
+
+      .destination-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+        color: #636e72;
+      }
+
+      .destination-price {
+        font-weight: bold;
+        color: #e84393;
+        font-size: 1.3em;
+        margin: 15px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #e84393;
+        color: white;
+        padding: 10px 25px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background: #d63073;
+      }
+
+      .deals-section {
+        background: #fce4ec;
+        padding: 40px;
+        border-radius: 8px;
+        margin: 50px 0;
+      }
+
+      .deals-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .deals-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .deals-list {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .deal-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .deal-title {
+        font-weight: bold;
+        color: #e84393;
+        margin-bottom: 5px;
+      }
+
+      .enquiry-section {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .enquiry-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #2d3436;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #dfe6e9;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+
+      textarea {
+        height: 120px;
+      }
+
+      .submit-btn {
+        background: #e84393;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1em;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        grid-column: 1 / -1;
+      }
+
+      .submit-btn:hover {
+        background: #d63073;
+      }
+
+      .form-note {
+        grid-column: 1 / -1;
+        font-size: 0.9em;
+        color: #636e72;
+        text-align: center;
+      }
+
+      footer {
+        background: #e84393;
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+        margin-top: 60px;
+      }
+
+      @media (max-width: 768px) {
+        .destinations-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          width: 90%;
+        }
+      }
+    </style>
+    <style>
+      .category-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #e84393;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .tab {
+            padding: 10px 25px;
+            margin: 0 10px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+       @media (max-width: 768px) {
+            .category-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="category-tabs">
+      <a href="index.html"> <button class="tab">Home</button> </a>
+      <a href="#romantic-destinations"> <button class="tab">Destination</button> </a>
+      <a href="#customized-deals"><button class="tab">Deals</button></a>
+      <a href="#enquiry-booking"> <button class="tab">Enquiry</button> </a>
+    </div>
+
+    <div class="container">
+      <section id="romantic-destinations">
+        <h2>Romantic Destinations</h2>
+        <div class="destinations-grid">
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Maldives"
+            />
+            <div class="destination-info">
+              <h3 class="destination-title">Maldives Paradise</h3>
+              <p class="destination-highlights">
+                Private overwater bungalow with sunset views, couples spa
+                treatments, and romantic beach dinners
+              </p>
+              <div class="destination-details">
+                <span>7 Nights</span>
+                <span>All Inclusive</span>
+              </div>
+              <p class="destination-price">From $3,499 per couple</p>
+              <a href="#" class="btn">View Package</a>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Bali"
+            />
+            <div class="destination-info">
+              <h3 class="destination-title">Bali Romance</h3>
+              <p class="destination-highlights">
+                Luxury villa with private pool, cultural tours, and couples
+                massage at a jungle spa
+              </p>
+              <div class="destination-details">
+                <span>10 Nights</span>
+                <span>Breakfast Included</span>
+              </div>
+              <p class="destination-price">From $2,899 per couple</p>
+              <a href="#" class="btn">View Package</a>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Santorini"
+            />
+            <div class="destination-info">
+              <h3 class="destination-title">Santorini Escape</h3>
+              <p class="destination-highlights">
+                Cave hotel with caldera views, wine tasting tours, and private
+                sunset cruise
+              </p>
+              <div class="destination-details">
+                <span>7 Nights</span>
+                <span>Half Board</span>
+              </div>
+              <p class="destination-price">From $3,199 per couple</p>
+              <a href="#" class="btn">View Package</a>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Paris"
+            />
+            <div class="destination-info">
+              <h3 class="destination-title">Parisian Love Story</h3>
+              <p class="destination-highlights">
+                Boutique hotel near Eiffel Tower, Seine river cruise, and
+                private Louvre tour
+              </p>
+              <div class="destination-details">
+                <span>5 Nights</span>
+                <span>Bed & Breakfast</span>
+              </div>
+              <p class="destination-price">From $2,499 per couple</p>
+              <a href="#" class="btn">View Package</a>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Bora Bora"
+            />
+            <div class="destination-info">
+              <h3 class="destination-title">Bora Bora Luxury</h3>
+              <p class="destination-highlights">
+                Overwater bungalow with glass floor, private island picnic, and
+                couples snorkeling
+              </p>
+              <div class="destination-details">
+                <span>8 Nights</span>
+                <span>All Inclusive</span>
+              </div>
+              <p class="destination-price">From $4,999 per couple</p>
+              <a href="#" class="btn">View Package</a>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img
+              src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Kyoto"
+            />
+            <div class="destination-info">
+              <h3 class="destination-title">Kyoto Serenity</h3>
+              <p class="destination-highlights">
+                Traditional ryokan with private onsen, tea ceremony experience,
+                and bamboo forest tour
+              </p>
+              <div class="destination-details">
+                <span>7 Nights</span>
+                <span>Half Board</span>
+              </div>
+              <p class="destination-price">From $3,299 per couple</p>
+              <a href="#" class="btn">View Package</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="customized-deals" class="deals-section">
+        <h2>Customized Honeymoon Deals</h2>
+        <div class="deals-content">
+          <div class="deals-text">
+            <p>
+              Your honeymoon should be as unique as your love story. We
+              specialize in creating completely personalized honeymoon
+              experiences tailored to your dreams.
+            </p>
+            <p>
+              Whether you're looking for adventure, relaxation, cultural
+              immersion, or a mix of everything, our honeymoon specialists will
+              design the perfect romantic getaway.
+            </p>
+            <p>
+              All our customized packages include special honeymoon perks like
+              room upgrades, romantic dinners, and surprise amenities.
+            </p>
+          </div>
+          <div class="deals-list">
+            <div class="deal-item">
+              <div class="deal-title">Tailored Itineraries</div>
+              <p>Combine multiple destinations or add special experiences</p>
+            </div>
+            <div class="deal-item">
+              <div class="deal-title">Budget Options</div>
+              <p>Luxury experiences at various price points</p>
+            </div>
+            <div class="deal-item">
+              <div class="deal-title">Special Add-ons</div>
+              <p>Private tours, spa credits, photography sessions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="enquiry-booking" class="enquiry-section">
+        <h2>Enquire & Book Your Honeymoon</h2>
+        <form class="enquiry-form">
+          <div class="form-group">
+            <label for="couple-name">Couple's Names</label>
+            <input
+              type="text"
+              id="couple-name"
+              required
+              placeholder="Your names"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="Your email" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Your phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="wedding-date">Wedding Date</label>
+            <input type="date" id="wedding-date" />
+          </div>
+
+          <div class="form-group">
+            <label for="travel-date">Preferred Travel Dates</label>
+            <input
+              type="text"
+              id="travel-date"
+              placeholder="Flexible or specific dates"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination Preference</label>
+            <select id="destination">
+              <option value="">Select preferred destination</option>
+              <option value="maldives">Maldives</option>
+              <option value="bali">Bali</option>
+              <option value="santorini">Santorini</option>
+              <option value="paris">Paris</option>
+              <option value="bora-bora">Bora Bora</option>
+              <option value="kyoto">Kyoto</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <select id="budget">
+              <option value="">Select budget range</option>
+              <option value="2000-3000">$2,000-$3,000</option>
+              <option value="3000-4000">$3,000-$4,000</option>
+              <option value="4000-5000">$4,000-$5,000</option>
+              <option value="5000+">$5,000+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="interests">Interests & Preferences</label>
+            <textarea
+              id="interests"
+              placeholder="What makes your perfect honeymoon?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Request Honeymoon Quote
+          </button>
+          <p class="form-note">
+            Our honeymoon specialist will contact you within 24 hours to discuss
+            your dream getaway
+          </p>
+        </form>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 ExploreWorld. All Rights Reserved. | <a href="terms.html" style="color: white;">Terms & Conditions</a> | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+    </footer>
+  </body>
+</html>
